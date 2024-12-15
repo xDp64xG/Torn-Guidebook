@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torn Beginner's Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background: #444;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: #555;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: #666;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .search-bar input {
+            width: 60%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .search-bar button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Torn Beginner's Guide</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="making-money.html">Making Money</a>
+        <a href="xp-leveling.html">XP Leveling</a>
+        <a href="gym-training.html">Gym Training</a>
+        <a href="tools-resources.html">Tools & Resources</a>
+    </nav>
+
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Search the guide...">
+        <button onclick="searchGuide()">Search</button>
+    </div>
+
+    <div class="container">
+        <h2>Welcome to the Torn Beginner's Guide!</h2>
+        <p>This guide will help you navigate Torn City, providing detailed steps for making money, leveling up, training, and more.</p>
+        <p>Use the navigation bar above to explore specific sections or use the search bar to find exactly what you need.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Torn Beginner's Guide | All rights reserved</p>
+    </footer>
+
+    <script>
+        function searchGuide() {
+            const query = document.getElementById('search').value.toLowerCase();
+            if (!query) {
+                alert("Please enter a search term.");
+                return;
+            }
+            const pages = [
+                { name: "Home", url: "index.html" },
+                { name: "Making Money", url: "making-money.html" },
+                { name: "XP Leveling", url: "xp-leveling.html" },
+                { name: "Gym Training", url: "gym-training.html" },
+                { name: "Tools & Resources", url: "tools-resources.html" }
+            ];
+            
+            const results = pages.filter(page => page.name.toLowerCase().includes(query));
+            if (results.length > 0) {
+                let message = "Search Results:\n";
+                results.forEach(result => {
+                    message += `- ${result.name}: ${result.url}\n`;
+                });
+                alert(message);
+            } else {
+                alert("No results found.");
+            }
+        }
+    </script>
+</body>
+</html>
