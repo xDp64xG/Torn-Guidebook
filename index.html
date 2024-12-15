@@ -125,13 +125,9 @@
                 { name: "Tools & Resources", url: "tools-resources.html" }
             ];
             
-            const results = pages.filter(page => page.name.toLowerCase().includes(query));
-            if (results.length > 0) {
-                let message = "Search Results:\n";
-                results.forEach(result => {
-                    message += `- ${result.name}: ${result.url}\n`;
-                });
-                alert(message);
+            const result = pages.find(page => page.name.toLowerCase().includes(query));
+            if (result) {
+                window.location.href = result.url;
             } else {
                 alert("No results found.");
             }
