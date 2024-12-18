@@ -1,10 +1,69 @@
 <!DOCTYPE html>
+
+<html>
+<head>
+<title>Torn Guidebook</title>
+</head>
+<body>
+<script>
+    function searchSite() {
+        const query = document.getElementById("searchBox").value.toLowerCase();
+        const pages = {
+            "Home": "index.html",
+            "Making Money": "making-money.html",
+            "XP Leveling": "xp-leveling.html",
+            "Gym Training": "gym-training.html",
+            "Crime Guides": "crime-guides.html",
+            "Combat": "combat.html",
+            "Factions": "factions.html",
+            "Tools & Resources": "tools-resources.html"
+        };
+
+        let results = [];
+        for (const [page, url] of Object.entries(pages)) {
+            if (page.toLowerCase().includes(query)) {
+                results.push(`<li><a href="${url}">${page}</a></li>`);
+            }
+        }
+
+        // Display results in a popup or alert
+        if (results.length > 0) {
+            const resultHTML = `<h2>Search Results</h2><ul>${results.join("")}</ul>`;
+            document.getElementById("searchResults").innerHTML = resultHTML;
+        } else {
+            alert("No results found.");
+        }
+    }
+</script>
+<div>
+<input id="searchBox" placeholder="Search..." type="text"/>
+<button onclick="searchSite()">Search</button>
+</div>
+<div id="searchResults"></div>
+
+<header>
+<h1>Torn Guidebook</h1>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="making-money.html">Making Money</a></li>
+<li><a href="xp-leveling.html">XP Leveling</a></li>
+<li><a href="gym-training.html">Gym Training</a></li>
+<li><a href="tools-resources.html">Tools &amp; Resources</a></li>
+<li><a href="crime-guides.html">Crime Guides</a></li>
+<li><a href="combat.html">Combat</a></li>
+<li><a href="factions.html">Factions</a></li>
+</ul>
+</nav>
+</header>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Training</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gym Training</title>
+<style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -58,24 +117,21 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Gym Training</h1>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="making-money.html">Making Money</a>
-        <a href="xp-leveling.html">XP Leveling</a>
-        <a href="gym-training.html">Gym Training</a>
-        <a href="tools-resources.html">Tools & Resources</a>
-    </nav>
-
-    <div class="container">
-        <h2>Welcome to the Gym Training Guide</h2>
-        <p>This section will detail how to effectively train in the gym to maximize your stats. Detailed content will be added soon.</p>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Torn Beginner's Guide | All rights reserved</p>
-    </footer>
+<nav>
+<a href="index.html">Home</a>
+<a href="making-money.html">Making Money</a>
+<a href="xp-leveling.html">XP Leveling</a>
+<a href="gym-training.html">Gym Training</a>
+<a href="tools-resources.html">Tools &amp; Resources</a>
+</nav>
+<div class="container">
+<h2>Welcome to the Gym Training Guide</h2>
+<p>This section will detail how to effectively train in the gym to maximize your stats. Detailed content will be added soon.</p>
+</div>
 </body>
+</html>
+<footer>
+<p>© 2024 Torn Guidebook. All rights reserved.</p>
+</footer>
+<h2>Gym Training</h2><p>Training regimens and options...</p></body>
 </html>
